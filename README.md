@@ -1,0 +1,1 @@
+The following python files can be used to check the prices of other products (not just the RTX4080, that was used as an example) from various different websites, compare them and get stored as an SQL database. This is just a beginning of something greater than what it is now. 
