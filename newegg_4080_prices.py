@@ -11,7 +11,7 @@ def save_price_info(url_loc):
     :return: None; The function will get the product name and the price and store it inside
     a dictionary
     """
-    res_loc = requests.get(url_loc)
+    res_loc = requests.get(url_loc, timeout=60)
     doc_loc = BeautifulSoup(res_loc.text, 'html.parser')
 
     price_loc = doc_loc.find(class_="price-current").strong.text.replace(",", "")
