@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
+from security import safe_requests
 
 
 def get_product_links():
@@ -7,7 +7,7 @@ def get_product_links():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     }
-    response = requests.get(search_url, headers=headers, timeout=60)
+    response = safe_requests.get(search_url, headers=headers, timeout=60)
     soup = BeautifulSoup(response.text, 'html.parser')
     product_links = soup.findAll("a", {"class": "item-title"})
 
